@@ -1,9 +1,12 @@
 const icons = document.querySelectorAll('.section-1-icons i')
+let currentIndex = 0; 
 
 setInterval(() => {
-    const icon = document.querySelector('.section-1-icons.change')
-
-    icon.classList.remove('change')
-    icon.nextElementSibling.classList.add('change')
-
-},1000)
+    icons[currentIndex].classList.remove('change')
+    currentIndex++;
+    if(currentIndex >= icons.length){
+        currentIndex = 0;
+    }
+    icons[currentIndex].classList.add('change')
+}
+,350)
